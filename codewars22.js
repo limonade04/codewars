@@ -6,7 +6,11 @@
 // n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
 
 function powersOfTwo(n){
-    
+    let powerArr = [] 
+    for(let i=0; i<=n; i++){
+        powerArr.push(2**i)
+    }
+    return powerArr
 }
 
 
