@@ -16,4 +16,3 @@ const stringToNumber = function(str){
 
 // stringToNumber("-7")
 
-      

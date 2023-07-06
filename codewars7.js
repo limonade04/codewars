@@ -19,4 +19,3 @@ function solution(str, ending){
 // solution('abc', 'd')
 // solution('abcde', 'abc')
   
-  

@@ -1,3 +1,4 @@
+
 /*****************************************************************
  * SquareSum - square the numbers in the array then sum them together 
  * 
@@ -14,3 +15,4 @@ const squareSum = (numbers)=>{ console.log(numbers.reduce((sum,num)=> sum+(num**
 // }
 
 // squareSum([1,3,4])
+
