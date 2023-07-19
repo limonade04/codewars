@@ -41,16 +41,28 @@
 
 function multTriangle(n) {
     let arr = []
+    let total = 0 
+    let evenTotal = 0 
+    let oddTotal = 0 
     for (let i=1; i<=n; i++){
         for (let ind=1; ind<=i; ind++){
             arr.push(i*ind)
         }
-        for ( let y=i; y>=1; y--){
-            arr.push(y*(i-1)) 
+        for ( let y=i; y>=2; y--){
+            arr.push(y*i) 
         }
     }
-    let total = arr.reduce((cur,acc)=>cur+acc) 
-    let evenTotal = arr.filter(x=>x%2===0).reduce((cur,acc)=>cur+acc) 
-    let oddTotal = arr.filter(x=>x%2!==0).reduce((cur,acc)=>cur+acc)
+    total = arr.reduce((cur,acc)=>cur+acc) 
+    evenTotal = arr.filter(x=>x%2===0).reduce((cur,acc)=>cur+acc) 
+    oddTotal = arr.filter(x=>x%2!==0).reduce((cur,acc)=>cur+acc)
     return [total, evenTotal, oddTotal]
 }
+
+
+// // Correct Answer 
+// function multTriangle(n) {
+//     let totalSum     = ((n*n + n)/2)**2;
+//     let totalOddSum  = (Math.ceil(n/2))**4;
+//     let totalEvenSum = totalSum - totalOddSum;
+//     return [totalSum, totalEvenSum, totalOddSum];
+// }
