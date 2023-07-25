@@ -15,8 +15,26 @@ In languages with no distinct character data type, the second argument will be a
 */ 
 
 /* 
-P: 
-R: 
-E: 
-P: 
+P: str ; char (single character)
+R: integer of count of char ; if no char or str return 0 
+E: Hello 'o' -> 1 
+   Hello, 'l' -> 2 
+    ,'w' -> 0 
+   Hello, 'r' -> 0 
+P: loop - check the str for char ; counter of char 
+    conditional - check if char in str; return counter 
 */
+
+function strCount(str, letter){  
+    let counter = 0 
+    for(let i=0; i<str.length; i++){
+        if(str[i]===letter){
+            counter++
+        } 
+    }  
+    return counter
+}
+
+// function strCount(str, letter){  
+//     return str.split(letter).length-1
+// }
