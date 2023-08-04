@@ -10,5 +10,13 @@ Example:
 move(3, 6) should equal 15
 */ 
 /* 
-
+P: current position : integer ; dice roll (1-6) x2 
+R: return new current position: integer 
+E: move(3, 6) -> 15 
+   move(0, 4) -> 8  
+P: roll*2 + position 
 */ 
+
+function move (position, roll) {
+    return (roll*2+position)
+}
