@@ -7,27 +7,25 @@ Example (Input --> Output)
 "CodEWaRs" --> [0,3,4,6]
 */ 
 
+/* 
+P: word = string of upper and lowercase letters 
+R: index of uppercase letters 
+E: codeWaRs -> [4,6]
+P: split - word.split('')
+    loop - .forEach((x,i)=>{})
+    if - if x === x.toUpperCase() 
+    push i to list 
+    return list 
+*/
+
 const capitals = word => {
     let list = []
-    for(let i=0; i<word.length; i++){
-        if(word[i] === word[i].toUpperCase()){
-            list.push(word[i].indexOf())
+    word.split('').forEach((x,i)=>{
+        if(x === x.toUpperCase()){
+            list.push(i)
         }
-    }
+    })
     return list
 }
 
-
-
-
-
-
-
-
-
-
-
-
-// var capitals = function (word) {
-// 	// Write your code here
-// };
+console.log(capitals('CodEWaRs'))
