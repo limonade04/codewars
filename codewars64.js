@@ -23,7 +23,7 @@ P: conditional - check for 'aeiou'
 */ 
 
 const shortcut = string => {
-    let word = []
+    let word = ''
     string.split('').forEach((x,i)=>{
         if(x !== 'a' && x !== 'e' && x !== 'i' && x !== 'o' && x !== 'u'){
             word+=x
