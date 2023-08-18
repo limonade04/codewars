@@ -36,9 +36,32 @@ E: declare_winner(Fighter("Lew", 10, 2), Fighter("Harry", 5, 4), "Lew") => "Lew"
   Harry attacks Lew; Lew now has 2 health.
   Lew attacks Harry: Harry now has -1 health and is dead. Lew wins.
 P: function 
-    
+    loop - keep attacking until someone hits 0 or below 
+    return winner 
 */ 
 
-function declareWinner(fighter1, fighter2, firstAttacker) {
-    return "Write your code here";
+function Fighter(name, health, damagePerAttack) {
+    this.name = name;
+    this.health = health;
+    this.damagePerAttack = damagePerAttack;
+    this.toString = function() { return this.name; }
 }
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    let attacker = firstAttacker;
+    let defender = firstAttacker === fighter1.name ? fighter2 : fighter1 ;
+
+    while(defender.health>0){
+        defender.health -= attacker.damagePerAttack ;
+        [attacker,defender] = [defender,attacker];
+    }
+    
+    return fighter1.health<=0 ? fighter2.name : fighter1.name
+}
+
+
+console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"))  // "Lew"
+console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Harry"))  // "Harry"
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"))  // "Harald"
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harald"))  // "Harald"
+console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Jerry"))  // "Harald"
+console.log(declareWinner(new Fighter("Jerry", 30, 3), new Fighter("Harald", 20, 5), "Harald"))  // "Harald"
