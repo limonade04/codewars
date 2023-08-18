@@ -52,8 +52,9 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
 
     while(defender.health>0){
         defender.health -= attacker.damagePerAttack ;
-        [attacker,defender] = [defender,attacker];
-    }
+        let temp = attacker;
+        attacker = defender;
+        defender = temp;    }
     
     return fighter1.health<=0 ? fighter2.name : fighter1.name
 }
