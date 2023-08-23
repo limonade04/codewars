@@ -10,8 +10,14 @@ If input data is invalid you should return 0 (as in no breaks are needed if we d
 */ 
 
 /* 
-P: 
-R: 
-E: 
-P: 
+P: n x m : integers, size of chocolate bar. Each square is 1x1 
+R: number of breaks needed to get to the final 1x1 pieces ; invalid inputs should equal 0 
+E: 2 x 1 => 1 
+    3 x 1 => 2 
+P:  conditional to test if invalid => 0 
+
 */ 
+
+function breakChocolate(n,m){
+    return n*m === 0 ? 0 : n*m-1
+}
