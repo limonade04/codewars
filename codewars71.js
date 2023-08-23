@@ -31,10 +31,13 @@ return counter list
 function findOdd(A) {
     let count = {}
     A.forEach((x) => {
-        (count[x]) ? count[x]++ : count[x] = 1 
+        count[x] ? count[x]++ : count[x] = 1;
+
     })
     
-    if(count.value()%2!==0){
-        return count.key()
+    for(prop in count){
+        if(count[prop]%2 !== 0){
+            return Number(prop)
         }
+    } 
 }
