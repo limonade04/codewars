@@ -24,9 +24,9 @@ P: create two sorted lists from the words.
 
 const isAnagram = (test,original) => {
 
-    const turnArr = (str) => {return str.toLowerCase().split("").map(x => x).sort()}
+    const sortStr = (str) => str.toLowerCase().split("").sort().join("")
 
-    return _.isEqual(turnArr(original), turnArr(test)) ? true : false 
+    return sortStr(original) === sortStr(test)
 }
 
 console.log(isAnagram("foefet", "toffee")) //  true
