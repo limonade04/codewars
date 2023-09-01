@@ -16,18 +16,21 @@ Note you should only return a number, the count of divisors. The numbers between
 
 */ 
 
-function getDivisorsCnt(n){
-    let count = 0 
-    for(let i=0; i<=n; i++){
-        if(n%i===0){
-            count+=1
+function getDivisorsCnt(n) {
+    let count = 0;
+    for (let i = 1; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            count += 2; // Count both i and n/i as divisors
         }
     }
-    return count
+
+    // If n is a perfect square, we've counted one divisor twice, so subtract one
+    if (Number.isInteger(Math.sqrt(n))) {count--}
+
+    return count;
 }
 
-
-    assert.strictEqual(getDivisorsCnt(1))   //  1
-    assert.strictEqual(getDivisorsCnt(10))  //  4
-    assert.strictEqual(getDivisorsCnt(11))  //  2
-    assert.strictEqual(getDivisorsCnt(54))  //  8
+console.log(getDivisorsCnt(1))   //  1
+console.log(getDivisorsCnt(10))  //  4
+console.log(getDivisorsCnt(11))  //  2
+console.log(getDivisorsCnt(54))  //  8
