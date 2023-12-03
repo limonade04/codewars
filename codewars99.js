@@ -26,7 +26,7 @@ function wave(str){
         if (letter ===" "){
             continue; 
         } else {
-            mexicanWave.push(str.slice(0,i)+letter.toUpperCase())+str.slice(i+1,str.length)
+            mexicanWave.push(str.slice(0,i)+letter.toUpperCase()+str.slice(i+1,str.length))
         }
     }
     return mexicanWave
@@ -34,3 +34,18 @@ function wave(str){
 
 console.log(wave("hello"))
 console.log(wave("you are the one"))
+
+
+function wave(str){
+    let mexicanWave = [] 
+    
+    for(let i=0; i<str.length; i++){
+        let letter = str[i]
+        if (letter ===" "){
+            continue; 
+        } else {
+            mexicanWave.push(str.slice(0,i)+letter.toUpperCase()+str.slice(i+1,str.length))
+        }
+    }
+    return mexicanWave
+}
