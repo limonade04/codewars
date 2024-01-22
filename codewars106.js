@@ -24,3 +24,7 @@ console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))  // 'e
 console.log(reverseWords('apple')) //  'elppa'
 console.log(reverseWords('a b c d'))  //  'a b c d'
 console.log(reverseWords('double  spaced  words'))  // 'elbuod  decaps  sdrow'
+
+
+console.log('test')
+console.log('hello mozzy!')
